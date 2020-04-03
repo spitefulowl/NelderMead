@@ -1,0 +1,15 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+- task: VSBuild@1
+  inputs:
+    solution: 'Nelder_Mead.sln'
+    vsVersion: '15.0'
+    platform: 'x64'
+    configuration: 'Release'
+    msbuildArchitecture: 'x64'
+    createLogFile: true
