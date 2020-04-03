@@ -6,18 +6,11 @@
 trigger:
 - master
 
-pool:
-  vmImage: 'ubuntu-latest'
-
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
-
 - task: VSBuild@1
   inputs:
     solution: '**\*.sln'
+    vsVersion: '15.0'
+    platform: 'x64'
+    configuration: 'Release'
+    msbuildArchitecture: 'x64'
+    createLogFile: true
