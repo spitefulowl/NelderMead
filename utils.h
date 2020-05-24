@@ -3,13 +3,9 @@
 #include <algorithm>
 #include <array>
 
-template<typename T, typename Function, std::size_t size>
-class unconditional;
-
 template<typename T, std::size_t size>
 class point {
 public:
-	friend unconditional;
 	point() {
 		my_value = std::array<T, size>{};
 	}
