@@ -3,12 +3,12 @@
 #include <cmath>
 #include <algorithm>
 
-std::vector<std::pair<double, double>> allowed_values = {
-	{3, 4},
-	{-1, 2},
-	{-3, 0},
-	{1, 10}
-};
+//std::vector<std::pair<double, double>> allowed_values = {
+//	{-1.2, 0},
+//	{1, 3},
+//	{-3, 1},
+//	{0, 4}
+//};
 // FindMinimum[100(x_1^2-x_2)^2 + (1 - x_1)^2, -3.2 <= x_1 <= 0, -3 <= x_2 <= 2]
 // FindMinimum[(x_1 + 10*x_2)^2 + 5(x_3 - x_4)^2 + (x_2 - 2*x_3)^4 + 10(x_1 - x_4)^4, 3 <= x_1 <= 4, -1 <= x_2 <= 2, -3 <= x_3 <=0, 1 <= x_4 <= 10]
 template<typename T, typename Function, std::size_t size>
@@ -96,7 +96,8 @@ private:
 		}
 	}
 public:
-	point_list_type get_solution(double eps) {
+	point_list_type get_solution(double eps, std::vector<std::pair<T, T>>& allowed_values) {
+		this->allowed_values = allowed_values;
 		generate_points();
 		point_list_type new_list = point_list;
 		std::size_t counter{ 0 };
@@ -204,4 +205,5 @@ private:
 	point_type base_point;
 	Function function;
 	point_list_type point_list;
+	std::vector<std::pair<T, T>> allowed_values;
 };
