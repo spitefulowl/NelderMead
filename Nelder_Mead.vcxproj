@@ -155,7 +155,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
-    <ClInclude Include="unconditional.h" />
+    <ClInclude Include="nelder_mead.h" />
     <ClInclude Include="utils.h" />
   </ItemGroup>
   <ItemGroup>

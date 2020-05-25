@@ -21,7 +21,7 @@
     <ClInclude Include="utils.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="unconditional.h">
+    <ClInclude Include="nelder_mead.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
