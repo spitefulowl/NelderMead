@@ -31,19 +31,19 @@ struct third {
 
 int main()
 {
-	{
-		point<double, 2> base(-1.2, 1.);
-		first<point<double, 2>> function{};
-		//nelder_mead<double, first<point<double, 2>>, 2> cond(1., 2., 0.5, 0.28, base, function);
-		//auto result = cond.get_solution(0.000001);
-		nelder_mead<double, first<point<double, 2>>, 2> cond(1., 2., 0.5, 5.3, base, function);
-		auto result = cond.get_solution(0.000001);
-		for (auto& elem : result) {
-			printf("Point: %f %f\n", elem[0], elem[1]);
-			printf("Criterion: %.8f\n", function(elem));
-		}
-	}
-	printf("\n\n\n");
+	//{
+	//	point<double, 2> base(-1.2, 1.);
+	//	first<point<double, 2>> function{};
+	//	//nelder_mead<double, first<point<double, 2>>, 2> cond(1., 2., 0.5, 0.28, base, function);
+	//	//auto result = cond.get_solution(0.000001);
+	//	nelder_mead<double, first<point<double, 2>>, 2> cond(1., 2., 0.5, 5.3, base, function);
+	//	auto result = cond.get_solution(0.000001);
+	//	for (auto& elem : result) {
+	//		printf("Point: %f %f\n", elem[0], elem[1]);
+	//		printf("Criterion: %.8f\n", function(elem));
+	//	}
+	//}
+	//printf("\n\n\n");
 	//{
 	//	point<double, 2> base(-1.2, -1.);
 	//	second<point<double, 2>> function{};
@@ -57,16 +57,16 @@ int main()
 	//	}
 	//}
 	//printf("\n\n\n");
-	//{
-	//	point<double, 4> base(3., -1., 0., 1.);
-	//	third<point<double, 4>> function{};
-	//	//nelder_mead<double, first<point<double, 2>>, 2> cond(1., 2., 0.5, 0.28, base, function);
-	//	//auto result = cond.get_solution(0.000001);
-	//	nelder_mead<double, third<point<double, 4>>, 4> cond(1., 2., 0.5, 5, base, function);
-	//	auto result = cond.get_solution(0.0000001);
-	//	for (auto& elem : result) {
-	//		printf("Point: %f %f %f %f\n", elem[0], elem[1], elem[2], elem[3]);
-	//		printf("Criterion: %.8f\n", function(elem));
-	//	}
-	//}
+	{
+		point<double, 4> base(3., -1., 0., 1.);
+		third<point<double, 4>> function{};
+		//nelder_mead<double, first<point<double, 2>>, 2> cond(1., 2., 0.5, 0.28, base, function);
+		//auto result = cond.get_solution(0.000001);
+		nelder_mead<double, third<point<double, 4>>, 4> cond(1., 2., 0.5, 5, base, function);
+		auto result = cond.get_solution(0.0000001);
+		for (auto& elem : result) {
+			printf("Point: %f %f %f %f\n", elem[0], elem[1], elem[2], elem[3]);
+			printf("Criterion: %.8f\n", function(elem));
+		}
+	}
 }

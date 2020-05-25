@@ -4,12 +4,13 @@
 #include <algorithm>
 
 std::vector<std::pair<double, double>> allowed_values = {
-	{-3.2, 0},
-	{-3, 2},
-	{-10, 10},
-	{-10, 10}
+	{3, 4},
+	{-1, 2},
+	{-3, 0},
+	{1, 10}
 };
 // FindMinimum[100(x_1^2-x_2)^2 + (1 - x_1)^2, -3.2 <= x_1 <= 0, -3 <= x_2 <= 2]
+// FindMinimum[(x_1 + 10*x_2)^2 + 5(x_3 - x_4)^2 + (x_2 - 2*x_3)^4 + 10(x_1 - x_4)^4, 3 <= x_1 <= 4, -1 <= x_2 <= 2, -3 <= x_3 <=0, 1 <= x_4 <= 10]
 template<typename T, typename Function, std::size_t size>
 class nelder_mead {
 private:
