@@ -1,7 +1,4 @@
-﻿// Nelder_Mead.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
-#include "pch.h"
-#include <iostream>
+﻿#include <iostream>
 #include "utils.h"
 #include "nelder_mead.h"
 
@@ -39,8 +36,6 @@ int main()
 		};
 		point<double, 2> base(-1.2, 1.);
 		first<point<double, 2>> function{};
-		//nelder_mead<double, first<point<double, 2>>, 2> cond(1., 2., 0.5, 0.28, base, function);
-		//auto result = cond.get_solution(ACCURACY);
 		nelder_mead<double, first<point<double, 2>>, 2> cond(1., 2., 0.5, 1.3, base, function);
 		auto result = cond.get_solution(ACCURACY, allowed_values);
 		for (auto& elem : result) {
@@ -56,8 +51,6 @@ int main()
 		};
 		point<double, 2> base(-1.2, -1.);
 		second<point<double, 2>> function{};
-		//nelder_mead<double, first<point<double, 2>>, 2> cond(1., 2., 0.5, 0.28, base, function);
-		//auto result = cond.get_solution(ACCURACY);
 		nelder_mead<double, second<point<double, 2>>, 2> cond(1., 2., 0.5, 1, base, function);
 		auto result = cond.get_solution(ACCURACY, allowed_values);
 		for (auto& elem : result) {
@@ -75,8 +68,6 @@ int main()
 		};
 		point<double, 4> base(3., -1., 0., 1.);
 		third<point<double, 4>> function{};
-		//nelder_mead<double, first<point<double, 2>>, 2> cond(1., 2., 0.5, 0.28, base, function);
-		//auto result = cond.get_solution(ACCURACY);
 		nelder_mead<double, third<point<double, 4>>, 4> cond(1., 2., 0.5, 2.5, base, function);
 		auto result = cond.get_solution(ACCURACY, allowed_values);
 		for (auto& elem : result) {

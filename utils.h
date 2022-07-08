@@ -1,4 +1,6 @@
-#pragma once
+#ifndef __H_UTILS
+#define __H_UTILS
+
 #include <vector>
 #include <algorithm>
 #include <array>
@@ -56,3 +58,5 @@ public:
 private:
 	std::array<T, size> my_value;
 };
+
+#endif /* __H_UTILS */
